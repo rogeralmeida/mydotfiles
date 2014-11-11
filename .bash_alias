@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+alias ll="ls -lahp"
+
+#Vagrant
+alias vup="vagrant up"
+alias vssh="vagrant ssh"
+alias vready="vagrant up && vagrant ssh"
+alias vh="vagrant halt"
+alias vst="vagrant status"
+alias vr="vagrant reload"
+alias vrp="vagrant reload --provision"
+alias vd="vagrant destroy"
+alias vdf="vagrant destroy --force"
+
+#Git
+alias g="git"
+alias gs="git status"
+alias gco="git checkout"
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gll="gl -p"
+alias ga="git add"
+alias gap="git add -p"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gpr="git pull --rebase"
+alias gpo="git push origin"
+alias gd="git diff"
+alias gdc="git diff --cached"
+
+#Sublime
+alias sub="open -a\"Sublime Text 2\""
