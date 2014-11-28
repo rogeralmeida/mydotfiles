@@ -28,4 +28,7 @@ alias gd="git diff"
 alias gdc="git diff --cached"
 
 #Sublime
-alias sub="open -a\"Sublime Text 2\""
+alias sub="open -a\"Sublime Text\""
+
+#navigation
+alias ..="cd .."
