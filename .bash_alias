@@ -2,7 +2,7 @@
 alias ll="ls -lahp"
 
 #Vagrant
-alias vup="vagrant up"
+alias vup="time vagrant up"
 alias vssh="vagrant ssh"
 alias vready="vagrant up && vagrant ssh"
 alias vh="vagrant halt"
@@ -14,10 +14,12 @@ alias vdf="vagrant destroy --force"
 
 #Git
 alias g="git"
-alias gs="git status"
+alias gs="git status -sb"
 alias gco="git checkout"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias gll="gl -p"
+alias gll="gl --stat"
+alias glll="gl -p"
+alias glc="git log --name-status | grep -E '^M[[:blank:]]' | cut -d' ' -f 2  | sort | uniq -c | sort -rn | head -20"
 alias ga="git add"
 alias gap="git add -p"
 alias gc="git commit"
