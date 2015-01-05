@@ -11,6 +11,7 @@ alias vr="vagrant reload"
 alias vrp="vagrant reload --provision"
 alias vd="vagrant destroy"
 alias vdf="vagrant destroy --force"
+alias vbr="vagrant box remove"
 
 #Git
 alias g="git"

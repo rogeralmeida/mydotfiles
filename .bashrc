@@ -8,7 +8,6 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home
 
 
 rvm use ruby-1.9.3-p484
-alias vbr="vagrant box remove"
 
 #This line exists because of berkshelf
 export PATH=/usr/bin/:$PATH
