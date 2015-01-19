@@ -17,7 +17,11 @@ eval "$(fasd --init auto)"
 
 source $HOME/mydotfiles/.bash_alias
 source $HOME/mydotfiles/java.sh
+source $HOME/mydotfiles/dotenv.sh
+
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=$HOME/mydotfiles/bin:$PATH
 
- [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+[[ -f $HOME/mydotfiles/.bash_preexec.sh ]] && source $HOME/mydotfiles/.bash_preexec.sh
+
