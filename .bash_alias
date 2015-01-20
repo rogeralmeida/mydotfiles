@@ -31,6 +31,7 @@ alias gd="git diff"
 alias gdc="git diff --cached"
 alias glsu="git ls-files -o --exclude-standard"
 alias gg="git grep"
+alias gig="__git_ignore_file"
 
 #Sublime
 alias sub="open -a\"Sublime Text\""

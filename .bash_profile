@@ -18,6 +18,7 @@ eval "$(fasd --init auto)"
 source $HOME/mydotfiles/.bash_alias
 source $HOME/mydotfiles/java.sh
 source $HOME/mydotfiles/dotenv.sh
+source $HOME/mydotfiles/lib/git.sh
 
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=$HOME/mydotfiles/bin:$PATH
