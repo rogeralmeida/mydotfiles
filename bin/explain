@@ -1,0 +1,5 @@
+#!/usr/bin/env bash --login
+
+PARAMETERS="${@}" 
+PARAMETERS=$(echo ${PARAMETERS} | urlencode)
+open "http://explainshell.com/explain?cmd=${PARAMETERS}"

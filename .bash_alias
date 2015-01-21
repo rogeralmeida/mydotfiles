@@ -38,3 +38,6 @@ alias sub="open -a\"Sublime Text\""
 
 #navigation
 alias ..="cd .."
+
+#general
+alias f5="source ~/.bash_profile"

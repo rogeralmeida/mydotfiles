@@ -23,6 +23,8 @@ source $HOME/mydotfiles/lib/git.sh
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=$HOME/mydotfiles/bin:$PATH
 
+export CUCUMBER_COLORS=comment=cyan
+
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 [[ -f $HOME/mydotfiles/.bash_preexec.sh ]] && source $HOME/mydotfiles/.bash_preexec.sh
 
