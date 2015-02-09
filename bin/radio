@@ -1,3 +1,32 @@
 #!/usr/bin/env bash
 
-/Applications/VLC.app/Contents/MacOS/VLC -I rc http://200.170.207.3:8000/sp_pop
+function showHelp(){
+	cat <<EndOfMessage
+Usage: radio [t[ransamerica]|b[and]]
+EndOfMessage
+}
+
+declare -A radioMap
+radioMap[t]=http://200.170.207.3:8000/sp_pop
+radioMap[b]=rtmp://evp.mm.uol.com.br/bandfm_sp/_definst_/bandfm_sp
+
+case ${1} in
+	-h|--help)
+		showHelp
+		exit 0
+		;;
+	t|transamerica)
+		selected=t
+		;;
+	b|band)
+		selected=b
+		;;
+	*)
+		showHelp
+		exit 0
+		;;
+esac
+
+#echo ${radioMap[${selected}]}
+
+/Applications/VLC.app/Contents/MacOS/VLC -I rc ${radioMap[${selected}]}
