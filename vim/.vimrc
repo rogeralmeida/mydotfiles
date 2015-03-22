@@ -4,7 +4,7 @@ set noswapfile
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/Vundle.vim
-call vundle#begin()
+call vundle#begin('~/.vim/bundle')
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
@@ -36,7 +36,6 @@ filetype plugin indent on    " required
 "
 syntax on
 set number
-set relativenumber
 set background=dark
 set ts=2 sts=2 sw=2 noexpandtab
 colorscheme solarized
