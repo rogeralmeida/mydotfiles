@@ -44,3 +44,6 @@ alias f5="source ~/.bash_profile"
 
 #vlc
 alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
+
+#vim + fasd
+alias v="sf -e mvim"
