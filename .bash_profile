@@ -8,7 +8,6 @@ export GIT_EDITOR='/usr/bin/vim'
 #eval "$(rbenv init -)"
 GIT_PROMPT_THEME=Solarized
 source ~/.bash-git-prompt/gitprompt.sh
-source $HOME/mydotfiles/lib/files.sh
 
 
 export CLICOLOR=1
@@ -16,13 +15,14 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 
 eval "$(fasd --init auto)"
 
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=$HOME/mydotfiles/bin:$PATH
+
 source $HOME/mydotfiles/.bash_alias
 source $HOME/mydotfiles/java.sh
 source $HOME/mydotfiles/dotenv.sh
 source $HOME/mydotfiles/lib/git.sh
-
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export PATH=$HOME/mydotfiles/bin:$PATH
+source $HOME/mydotfiles/lib/files.sh
 
 export CUCUMBER_COLORS=comment=cyan
 export LC_ALL=en_US.UTF-8
