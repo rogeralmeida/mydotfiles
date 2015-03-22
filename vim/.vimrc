@@ -85,4 +85,11 @@ nnoremap <c-u> bvwU
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" Mapping <leader>" to surrond current word with quotes
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+" Mapping <leader>' to surrond current word with single quotes
+nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+vnoremap <leader>" `<i"<esc>`>a"<esc>
 
+
+iabbrev @@ roger.eduardo@gmail.com
