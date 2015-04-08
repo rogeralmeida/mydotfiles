@@ -3,7 +3,8 @@ filetype off                  " required
 set noswapfile
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin('~/.vim/bundle')
 call vundle#begin('~/.vim/bundle')
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -18,6 +19,10 @@ Plugin 'rodjek/vim-puppet'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'chrisbra/Colorizer'
 Plugin 'tpope/vim-surround'
+Plugin 'neilagabriel/vim-geeknote'
+Plugin 'lbnf.vim'
+Plugin 'killphi/vim-ebnf'
+Plugin 'ervandew/supertab'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -38,6 +43,7 @@ syntax on
 set number
 set background=dark
 set ts=2 sts=2 sw=2 noexpandtab
+set autoindent
 colorscheme solarized
 
 
@@ -55,7 +61,6 @@ set smartcase
 set incsearch showmatch hlsearch
 set colorcolumn=85
 
-set list
 set listchars=tab:▸\ ,eol:¬
 
 let mapleader = ","
@@ -80,16 +85,20 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <silent> <leader>w :set wrap!<CR>
 
 inoremap <c-u> <esc>bvwUi
-nnoremap <c-u> bvwU
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+"Map , l to toogle list
+nnoremap <leader>l :set list!<cr>
 
 " Mapping <leader>" to surrond current word with quotes
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 " Mapping <leader>' to surrond current word with single quotes
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 vnoremap <leader>" `<i"<esc>`>a"<esc>
+
+nnoremap <F8> :Geeknote<cr>
 
 
 iabbrev @@ roger.eduardo@gmail.com
