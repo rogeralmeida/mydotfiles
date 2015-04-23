@@ -23,6 +23,7 @@ Plugin 'neilagabriel/vim-geeknote'
 Plugin 'lbnf.vim'
 Plugin 'killphi/vim-ebnf'
 Plugin 'ervandew/supertab'
+Plugin 'ecomba/vim-ruby-refactoring'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

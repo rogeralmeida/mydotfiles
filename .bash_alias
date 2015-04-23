@@ -32,6 +32,8 @@ alias gdc="git diff --cached"
 alias glsu="git ls-files -o --exclude-standard"
 alias gg="git grep"
 alias gig="__git_ignore_file"
+alias gcommiters="git shortlog -s | sort"
+alias gbugaddresses="git log --pretty=format: --name-only | grep -ve '^$' | sort | uniq -c | sort -r | less | head -30" 
 
 #Sublime
 alias sub="open -a\"Sublime Text\""
@@ -47,3 +49,7 @@ alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
 
 #vim + fasd
 alias v="sf -e mvim"
+
+#Bundle
+alias be="bundle exec"
+alias bi="bundle install"

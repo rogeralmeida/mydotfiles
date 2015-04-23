@@ -31,3 +31,6 @@ export LANG=en_US.UTF-8
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 [[ -f $HOME/mydotfiles/.bash_preexec.sh ]] && source $HOME/mydotfiles/.bash_preexec.sh
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
