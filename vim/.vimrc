@@ -24,6 +24,10 @@ Plugin 'lbnf.vim'
 Plugin 'killphi/vim-ebnf'
 Plugin 'ervandew/supertab'
 Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,8 +49,8 @@ set number
 set background=dark
 set ts=2 sts=2 sw=2 noexpandtab
 set autoindent
+let g:airline_theme='luna'
 colorscheme solarized
-
 
 " Set region to British English
 set spelllang=en_gb
@@ -66,7 +70,6 @@ set listchars=tab:▸\ ,eol:¬
 
 let mapleader = ","
 
-set autochdir
 let g:ctrlp_working_path_mode = 0
 
 map <C-l> <C-w>l

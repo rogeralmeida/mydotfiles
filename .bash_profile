@@ -13,7 +13,6 @@ source ~/.bash-git-prompt/gitprompt.sh
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
-eval "$(fasd --init auto)"
 
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=$HOME/mydotfiles/bin:$PATH
@@ -34,3 +33,8 @@ export LANG=en_US.UTF-8
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+eval "$(fasd --init auto)"
+

@@ -53,3 +53,7 @@ alias v="sf -e mvim"
 #Bundle
 alias be="bundle exec"
 alias bi="bundle install"
+alias bec="be cucumber"
+
+#rbenv
+alias rei="rbenv install -l | selecta | xargs rbenv install"
