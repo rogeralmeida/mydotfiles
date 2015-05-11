@@ -57,3 +57,6 @@ alias bec="be cucumber"
 
 #rbenv
 alias rei="rbenv install -l | selecta | xargs rbenv install"
+
+#Rails
+alias migrate="rake db:migrate db:rollback && rake db:migrate"

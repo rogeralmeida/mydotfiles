@@ -28,6 +28,10 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'jgdavey/tslime.vim'
+Plugin 'jakedouglas/exuberant-ctags'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -112,3 +116,20 @@ iabbrev @@ roger.eduardo@gmail.com
 " http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
+
+" Status line always on
+set laststatus=2
+
+" Stop F... complaining about unsaved files
+set hidden
+set expandtab
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>n :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+" vim-rspec using send_to_Tmux
+let g:rspec_command = 'call Send_to_Tmux("be rspec {spec}\n")'
