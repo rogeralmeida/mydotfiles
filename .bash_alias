@@ -42,7 +42,7 @@ alias sub="open -a\"Sublime Text\""
 alias ..="cd .."
 
 #general
-alias f5="source ~/.bash_profile"
+alias f5="source ${HOME}/mydotfiles/.bash_profile"
 
 #vlc
 alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"

@@ -60,9 +60,17 @@ if [ ! -f ~/solarized.zip ]; then
 	wget -O ~/solarized.zip http://ethanschoonover.com/solarized/files/solarized.zip
 fi
 
-unzip ~/solarized.zip -d ~/
-open ~/solarized/iterm2-colors-solarized/Solarized\ Dark.itermcolors
+if [ ! -f ~/solarized/iterm2-colors-solarized/Solarized\ Dark.itermcolors ]; then
+  unzip ~/solarized.zip -d ~/
+  open ~/solarized/iterm2-colors-solarized/Solarized\ Dark.itermcolors
+fi
 
 if [ ! -d ~/.bash-git-prompt ]; then
+	echo "Installing bash-git-prompt"
 	git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt
+fi
+
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+	echo "Installing Vundle"
+	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi

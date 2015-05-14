@@ -14,7 +14,7 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+#export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=$HOME/mydotfiles/bin:$PATH
 
 source $HOME/mydotfiles/.bash_alias
@@ -27,8 +27,8 @@ export CUCUMBER_COLORS=comment=cyan
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 [[ -f $HOME/mydotfiles/.bash_preexec.sh ]] && source $HOME/mydotfiles/.bash_preexec.sh
+
 
 
 ### Added by the Heroku Toolbelt
