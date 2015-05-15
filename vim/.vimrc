@@ -128,8 +128,10 @@ set expandtab
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>n :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
+map <Leader>l :call Send_to_Tmux("!! \n")<CR>
+" map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+map <Leader>c :call Send_to_Tmux("be cucumber @% \n")<CR>
 
 " vim-rspec using send_to_Tmux
 let g:rspec_command = 'call Send_to_Tmux("be rspec {spec}\n")'
