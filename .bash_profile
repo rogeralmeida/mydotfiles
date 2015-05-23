@@ -14,7 +14,6 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 
-#export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=$HOME/mydotfiles/bin:$PATH
 
 source $HOME/mydotfiles/.bash_alias

@@ -38,12 +38,12 @@ echo " Upgrade any already-installed formulae."
 brew upgrade --all
 
 echo "installing brew packages"
-cat Homebrew.manifest | while read line; do
+cat ~/mydotfiles/Homebrew.manifest | while read line; do
 	install_brew_package "${line}"
 done
 
 echo "installing cask packages"
-cat Cask.manifest | while read line; do
+cat ~/mydotfiles/Cask.manifest | while read line; do
 	install_cask_package "${line}"
 done
 
