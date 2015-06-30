@@ -59,7 +59,7 @@ let g:airline_theme='luna'
 colorscheme solarized
 
 " Set region to British English
-set spelllang=en_gb
+set spelllang=en_us
 
 set wildmenu
 
@@ -96,7 +96,9 @@ nnoremap <silent> <leader>w :set wrap!<CR>
 
 inoremap <c-u> <esc>bvwUi
 
+" Open my ~/.vimrc in a vertical new window
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" Source my ~/.vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 "Map , l to toogle list
@@ -130,10 +132,25 @@ set expandtab
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>n :call RunNearestSpec()<CR>
-map <Leader>l :call Send_to_Tmux("!! \n")<CR>
 " map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-map <Leader>c :call Send_to_Tmux("be cucumber @% \n")<CR>
 
 " vim-rspec using send_to_Tmux
 let g:rspec_command = 'call Send_to_Tmux("be rspec {spec}\n")'
+
+" defining configurations by file type
+" Markdown nolist, spell, wrap
+autocmd FileType markdown :setlocal spell spelllang=en_us nolist wrap
+
+" Ruby: nospell, list, nowrap
+autocmd FileType ruby :setlocal nospell list nowrap
+
+" tab navigation like firefox
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+
+iabbrev fnc function(){}

@@ -2,13 +2,18 @@
 
 function showHelp(){
 	cat <<EndOfMessage
-Usage: radio [t[ransamerica]|b[and]]
+Usage: radio [t[ransamerica]|b[and]|j[ovempan]|g[lobofm]|[h|globoam]|c[orinthians]|[d|bandam]]
 EndOfMessage
 }
 
 declare -A radioMap
 radioMap[t]=http://200.170.207.3:8000/sp_pop
 radioMap[b]=rtmp://evp.mm.uol.com.br/bandfm_sp/_definst_/bandfm_sp
+radioMap[j]=http://evp.mm.uol.com.br:1935/jovempan/_definst_/jpnews.sdp/waldo_paes.m3u8
+radioMap[g]=http://media.sgr.globo.com:1935/MusicalRD/globofm.sdp/waldo_paes.m3u8
+radioMap[h]=http://media.sgr.globo.com:1935/RadioGloboRD/gamsp.sdp/waldo_paes.m3u8
+radioMap[c]=http://streaming06.hstbr.net:8010/live?type=.m3u8
+radioMap[d]="http://evp.mm.uol.com.br:1935/radioam_sp/_definst_ /radioam_sp/waldo_paes.m3u8"
 
 case ${1} in
 	-h|--help)
@@ -21,6 +26,21 @@ case ${1} in
 	b|band)
 		selected=b
 		;;
+  j|jovempan)
+    selected=j
+    ;;
+  g|globofm)
+    selected=g
+    ;;
+  h|globoam)
+    selected=h
+    ;;
+  c|corinthians)
+    selected=c
+    ;;
+  d|bandam)
+    selected=d
+    ;;
 	*)
 		showHelp
 		exit 0
@@ -29,4 +49,5 @@ esac
 
 #echo ${radioMap[${selected}]}
 
-/Applications/VLC.app/Contents/MacOS/VLC -I rc ${radioMap[${selected}]}
+#/Applications/VLC.app/Contents/MacOS/VLC -I rc ${radioMap[${selected}]}
+/opt/homebrew-cask/Caskroom/vlc/2.2.1/VLC.app/Contents/MacOS/VLC -I rc "${radioMap[${selected}]}"
