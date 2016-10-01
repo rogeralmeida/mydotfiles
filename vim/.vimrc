@@ -25,7 +25,6 @@ Plugin 'killphi/vim-ebnf'
 Plugin 'ervandew/supertab'
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline-themes/vim-airline-themes'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-fugitive'
@@ -56,7 +55,6 @@ set number
 set background=dark
 set ts=2 sts=2 sw=2 noexpandtab
 set autoindent
-let g:airline_theme='luna'
 colorscheme solarized
 
 " Set region to British English
