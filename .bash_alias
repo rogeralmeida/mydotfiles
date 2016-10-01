@@ -61,3 +61,6 @@ alias rei="rbenv install -l | selecta | xargs rbenv install"
 #Rails
 alias migrate="rake db:migrate db:rollback && rake db:migrate"
 alias tests="time (be rspec && be rake cucumber:non_js && be rake cucumber:js)"
+
+#ruby
+alias rb="rbenv exec bundle exec"

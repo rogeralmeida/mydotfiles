@@ -24,7 +24,8 @@ Plugin 'lbnf.vim'
 Plugin 'killphi/vim-ebnf'
 Plugin 'ervandew/supertab'
 Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline-themes/vim-airline-themes'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-fugitive'
@@ -96,6 +97,11 @@ nnoremap <silent> <leader>w :set wrap!<CR>
 
 inoremap <c-u> <esc>bvwUi
 
+" =================== Shortcuts ==============
+
+" Open my ~/.bashrc in a vertical new window
+nnoremap <leader>eb :vsplit $HOME/.bashrc<cr>
+
 " Open my ~/.vimrc in a vertical new window
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Source my ~/.vimrc
@@ -118,8 +124,8 @@ iabbrev @@ roger.eduardo@gmail.com
 " Changing cursor for different modes
 " This came from:
 " http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
-let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+" let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+" let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
 
 " Status line always on
