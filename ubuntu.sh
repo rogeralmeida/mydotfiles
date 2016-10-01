@@ -9,7 +9,7 @@ log(){
 
 if [[ $1 == '--force-update' ]]; then
 	log "Updating apt-get"
-	sudo add-apt-repository ppa:aacebedo/fasd
+	sudo add-apt-repository -y ppa:aacebedo/fasd
 	sudo apt-get update
 fi
 
