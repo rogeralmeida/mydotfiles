@@ -39,4 +39,5 @@ grep -q mydotfiles ~/.bashrc && echo 'mydotfiles already in bashrc' || echo 'sou
 
 log "Installing Vundle"
 [ "$(ls -A ~/.vim/bundle/Vundle.vim)" ] && log "Vundle already installed" || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+ln -s "$HOME/mydotfiles/vim/.vimrc" "$HOME/.vimrc"
 vim +PluginInstall +qall
