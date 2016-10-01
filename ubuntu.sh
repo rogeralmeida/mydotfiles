@@ -30,8 +30,6 @@ log "Installing rbenv-build"
 log "installing Ruby"
 ~/.rbenv/bin/rbenv versions | [ "$(grep -c $RUBY_VERSION -)" -ge 1 ] && echo "Ruby $RUBY_VERSION already installed" || ~/.rbenv/bin/rbenv install 2.3.1
 
-mkdir -p ~/code/auction
-
 log "Installing bash-git-prompt"
 [ "$(ls -A ~/.bash-git-prompt)" ] && echo "bash-git-prompt already installed" || git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
