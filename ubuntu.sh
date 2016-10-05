@@ -7,14 +7,14 @@ log(){
 }
 
 
-if [[ $1 == '--force-update' ]]; then
+if [[ $1 != '--skip-update' ]]; then
 	log "Updating apt-get"
 	sudo add-apt-repository -y ppa:aacebedo/fasd
 	sudo apt-get update
 fi
 
 log "Installing ubuntu dependencies"
-sudo apt-get install -y git build-essential libssl-dev libreadline-dev zlib1g-dev fasd unzip
+sudo apt-get install -y git build-essential libssl-dev libreadline-dev zlib1g-dev fasd unzip python2.7
 
 log "installing rbenv"
 [ "$(ls -A ~/.rbenv)" ] && echo "rbenv already installed" || git clone https://github.com/rbenv/rbenv.git ~/.rbenv 
@@ -53,3 +53,10 @@ log "Installing Vundle"
 [ "$(ls -A ~/.vim/bundle/Vundle.vim)" ] && log "Vundle already installed" || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ln -s "$HOME/mydotfiles/vim/.vimrc" "$HOME/.vimrc"
 vim +PluginInstall +qall
+
+log "Using python2.7 as default"
+sudo ln -sf /usr/bin/python2.7 /usr/bin/python
+
+log "Configuring git"
+git config --global user.email "roger.eduardo@gmail.com"
+git config --global user.name "Roger Almeida"
