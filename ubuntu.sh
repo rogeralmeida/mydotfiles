@@ -14,7 +14,7 @@ if [[ $1 == '--force-update' ]]; then
 fi
 
 log "Installing ubuntu dependencies"
-sudo apt-get install -y git build-essential libssl-dev libreadline-dev zlib1g-dev fasd
+sudo apt-get install -y git build-essential libssl-dev libreadline-dev zlib1g-dev fasd unzip
 
 log "installing rbenv"
 [ "$(ls -A ~/.rbenv)" ] && echo "rbenv already installed" || git clone https://github.com/rbenv/rbenv.git ~/.rbenv 
@@ -36,6 +36,18 @@ log "Installing bash-git-prompt"
 log "Bringing dot files conffigurations"
 [ "$(ls -A ~/mydotfiles)" ] && echo "mydotfiles already installed" || git clone https://github.com/rogeralmeida/mydotfiles.git ~/mydotfiles
 grep -q mydotfiles ~/.bashrc && echo 'mydotfiles already in bashrc' || echo 'source "$HOME/mydotfiles/.bash_profile"' >> ~/.bashrc
+
+
+log "Installing solarized theme"
+if [ ! -f ~/solarized.zip ]; then
+	wget -O ~/solarized.zip http://ethanschoonover.com/solarized/files/solarized.zip
+fi
+
+if [ ! -f ~/solarized/iterm2-colors-solarized/Solarized\ Dark.itermcolors ]; then
+  unzip ~/solarized.zip -d ~/
+
+fi
+
 
 log "Installing Vundle"
 [ "$(ls -A ~/.vim/bundle/Vundle.vim)" ] && log "Vundle already installed" || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
