@@ -18,6 +18,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'rodjek/vim-puppet'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'chrisbra/Colorizer'
+Plugin 'josuegaleas/jay'
 Plugin 'tpope/vim-surround'
 Plugin 'lbnf.vim'
 Plugin 'killphi/vim-ebnf'
@@ -54,7 +55,7 @@ set number
 set background=dark
 set ts=2 sts=2 sw=2 noexpandtab
 set autoindent
-colorscheme solarized
+colorscheme jay 
 
 " Set region to British English
 set spelllang=en_us
