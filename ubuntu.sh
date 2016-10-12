@@ -14,7 +14,7 @@ if [[ $1 != '--skip-update' ]]; then
 fi
 
 log "Installing ubuntu dependencies"
-sudo apt-get install -y git build-essential libssl-dev libreadline-dev zlib1g-dev fasd unzip python2.7
+sudo apt-get install -y git build-essential libssl-dev libreadline-dev zlib1g-dev fasd unzip python2.7 postgresql-9.5 libpq-dev
 
 log "installing rbenv"
 [ "$(ls -A ~/.rbenv)" ] && echo "rbenv already installed" || git clone https://github.com/rbenv/rbenv.git ~/.rbenv 
