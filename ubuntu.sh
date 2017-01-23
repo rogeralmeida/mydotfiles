@@ -6,6 +6,21 @@ log(){
 	echo ">>>>>> $1"
 }
 
+log "Configuring root"
+adduser --disabled-password --quiet dev
+usermod -aG sudo dev
+mkdir /home/dev/.ssh
+cp ~/.ssh/authorized_keys /home/dev/.ssh/
+chown -R dev:dev /home/dev/
+
+su - dev
+cd /home/dev
+sudo fallocate -l 1G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sudo cp /etc/fstab /etc/fstab.bak
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 
 if [[ $1 != '--skip-update' ]]; then
 	log "Updating apt-get"
