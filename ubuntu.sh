@@ -6,22 +6,6 @@ log(){
 	echo ">>>>>> $1"
 }
 
-log "Configuring root"
-adduser --disabled-password --quiet dev
-usermod -aG sudo dev
-mkdir /home/dev/.ssh
-cp ~/.ssh/authorized_keys /home/dev/.ssh/
-chown -R dev:dev /home/dev/
-
-su - dev
-cd /home/dev
-sudo fallocate -l 1G /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
-sudo swapon /swapfile
-sudo cp /etc/fstab /etc/fstab.bak
-echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
-
 if [[ $1 != '--skip-update' ]]; then
 	log "Updating apt-get"
 	sudo add-apt-repository -y ppa:aacebedo/fasd
@@ -29,7 +13,11 @@ if [[ $1 != '--skip-update' ]]; then
 fi
 
 log "Installing ubuntu dependencies"
-sudo apt-get install -y git build-essential libssl-dev libreadline-dev zlib1g-dev fasd unzip python2.7 postgresql-9.5 libpq-dev
+sudo apt-get install -y git build-essential libssl-dev libreadline-dev zlib1g-dev fasd unzip python2.7 postgresql-9.5 libpq-dev python-software-properties
+
+log "Installing Node"
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+sudo apt-git install nodejs
 
 log "installing rbenv"
 [ "$(ls -A ~/.rbenv)" ] && echo "rbenv already installed" || git clone https://github.com/rbenv/rbenv.git ~/.rbenv 
