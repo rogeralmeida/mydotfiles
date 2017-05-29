@@ -57,9 +57,6 @@ log "Installing Vundle"
 ln -s "$HOME/mydotfiles/vim/.vimrc" "$HOME/.vimrc"
 vim +PluginInstall +qall
 
-log "Using python2.7 as default"
-sudo ln -sf /usr/bin/python2.7 /usr/bin/python
-
 log "Configuring git"
 git config --global user.email "roger.eduardo@gmail.com"
 git config --global user.name "Roger Almeida"

@@ -64,3 +64,5 @@ alias tests="time (be rspec && be rake cucumber:non_js && be rake cucumber:js)"
 
 #ruby
 alias rb="rbenv exec bundle exec"
+
+alias ta="tmux a -t"
