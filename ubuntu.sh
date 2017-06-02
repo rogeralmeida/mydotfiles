@@ -40,17 +40,6 @@ log "Bringing dot files conffigurations"
 [ "$(ls -A ~/mydotfiles)" ] && echo "mydotfiles already installed" || git clone https://github.com/rogeralmeida/mydotfiles.git ~/mydotfiles
 grep -q mydotfiles ~/.bashrc && echo 'mydotfiles already in bashrc' || echo 'source "$HOME/mydotfiles/.bash_profile"' >> ~/.bashrc
 
-
-log "Installing solarized theme"
-if [ ! -f ~/solarized.zip ]; then
-	wget -O ~/solarized.zip http://ethanschoonover.com/solarized/files/solarized.zip
-fi
-
-if [ ! -f ~/solarized/iterm2-colors-solarized/Solarized\ Dark.itermcolors ]; then
-  unzip ~/solarized.zip -d ~/
-
-fi
-
 rm /.vim
 rm /.vimrc
 ln -s ~/mydotfiles/.vim ~/.vim
