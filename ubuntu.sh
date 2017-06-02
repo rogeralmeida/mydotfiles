@@ -51,10 +51,16 @@ if [ ! -f ~/solarized/iterm2-colors-solarized/Solarized\ Dark.itermcolors ]; the
 
 fi
 
+rm /.vim
+rm /.vimrc
+ln -s ~/mydotfiles/.vim ~/.vim
+ln -s "$HOME/mydotfiles/.vim/.vimrc" "$HOME/.vimrc"
+cd ~/mydotfiles
+git submodule update --init .
+cd ~
 
 log "Installing Vundle"
 [ "$(ls -A ~/.vim/bundle/Vundle.vim)" ] && log "Vundle already installed" || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-ln -s "$HOME/mydotfiles/vim/.vimrc" "$HOME/.vimrc"
 vim +PluginInstall +qall
 
 log "Configuring git"
