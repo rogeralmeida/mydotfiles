@@ -72,7 +72,8 @@ set smartcase
 set incsearch showmatch hlsearch
 set colorcolumn=85
 
-set listchars=tab:▸\ ,eol:¬,space:.
+set listchars=tab:▸\ ,eol:¬,space:∙
+"set listchars=tab:▸\ ,eol:¬,space:▬
 
 let mapleader = ","
 
