@@ -59,7 +59,7 @@ colorscheme solarized
 set term=screen-256color
 
 " Set region to British English
-set spelllang=en_us
+set spelllang=en_au
 
 set wildmenu
 
