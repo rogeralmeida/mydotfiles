@@ -55,7 +55,8 @@ set number
 set background=dark
 set ts=2 sts=2 sw=2 noexpandtab
 set autoindent
-colorscheme solarized
+"colorscheme solarized
+colorscheme jay
 set term=screen-256color
 
 " Set region to British English
