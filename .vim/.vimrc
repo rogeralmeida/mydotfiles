@@ -34,6 +34,12 @@ Plugin 'jgdavey/tslime.vim'
 Plugin 'jakedouglas/exuberant-ctags'
 Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/syntastic'
+" Plugins for writing
+Plugin 'reedes/vim-pencil'
+Plugin 'ron89/thesaurus_query.vim'
+Plugin 'rhysd/vim-grammarous'
+Plugin 'dpelle/vim-LanguageTool'
+Plugin 'junegunn/goyo.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
