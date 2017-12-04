@@ -5,17 +5,6 @@ if [ ! `which brew` ]; then
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-function install_brew_package {
-	echo "Installing brew ${@}"
-	brew install "${@}"
-}
-
-function install_cask_package {
-	echo "Installing cask ${@}"
-	brew cask install "${@}"
-}
-
-
 echo "Changing the bash_profile"
 rm ~/.bash_profile
 ln -s ~/mydofiles/.bash_profile ~/.bash_profile
@@ -37,15 +26,8 @@ brew update
 echo " Upgrade any already-installed formulae."
 brew upgrade --all
 
-echo "installing brew packages"
-cat ~/mydotfiles/Homebrew.manifest | while read line; do
-	install_brew_package "${line}"
-done
-
-echo "installing cask packages"
-cat ~/mydotfiles/Cask.manifest | while read line; do
-	install_cask_package "${line}"
-done
+./macInstallBrew.sh
+./macInstallCask.sh
 
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.

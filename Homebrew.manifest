@@ -4,6 +4,7 @@ bash-completion2
 caskroom/cask/brew-cask
 chromedriver
 coreutils
+docker
 fasd
 ffind
 findutils
