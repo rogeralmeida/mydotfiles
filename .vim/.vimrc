@@ -22,7 +22,10 @@ Plugin 'josuegaleas/jay'
 Plugin 'tpope/vim-surround'
 Plugin 'lbnf.vim'
 Plugin 'killphi/vim-ebnf'
-Plugin 'ervandew/supertab'
+" Plugin 'ervandew/supertab'
+Plugin 'valloric/youcompleteme'
+Plugin 'honza/vim-snippets'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-rails'
@@ -40,6 +43,8 @@ Plugin 'ron89/thesaurus_query.vim'
 Plugin 'rhysd/vim-grammarous'
 Plugin 'dpelle/vim-LanguageTool'
 Plugin 'junegunn/goyo.vim'
+" tagbar to show file structure
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
