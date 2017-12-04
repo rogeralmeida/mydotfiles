@@ -2,3 +2,4 @@
 *.un~
 *.spl
 .vim/bundle/*
+.DS_Store
