@@ -37,3 +37,4 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 eval "$(fasd --init auto)"
 
+export PATH="/usr/local/sbin:$PATH"
