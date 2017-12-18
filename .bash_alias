@@ -48,7 +48,8 @@ alias f5="source ${HOME}/mydotfiles/.bash_profile"
 alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
 
 #vim + fasd
-alias v="sf -e mvim"
+alias v="sf -e nvim"
+alias vim="nvim"
 
 #Bundle
 alias be="bundle exec"
