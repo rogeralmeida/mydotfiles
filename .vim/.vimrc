@@ -68,7 +68,9 @@ set ts=2 sts=2 sw=2 noexpandtab
 set autoindent
 "colorscheme solarized
 colorscheme jay
-set term=screen-256color
+
+" nvim is complaining about this option
+" set term=screen-256color
 
 " Set region to British English
 set spelllang=en_au
@@ -172,3 +174,9 @@ inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
 iabbrev fnc function(){}
+
+" making ctrlp ignore some folders and files
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,_site/*
+
+" Theasurus query plugin. Remapping shortcut to solve conflict
+nnoremap <Leader>hs :ThesaurusQueryReplaceCurrentWord<CR>
