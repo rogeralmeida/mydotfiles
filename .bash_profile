@@ -38,3 +38,5 @@ eval "$(rbenv init -)"
 eval "$(fasd --init auto)"
 
 export PATH="/usr/local/sbin:$PATH"
+
+export NOTE_PATH="/Users/ralmeida/code/notes"

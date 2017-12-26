@@ -3,3 +3,5 @@
 *.spl
 .vim/bundle/*
 .DS_Store
+configstore/
+gtk-2.0/
