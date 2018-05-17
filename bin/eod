@@ -1,0 +1,10 @@
+#!/usr/bin/env bash --login
+
+function log_question()
+{
+   echo $1
+   read
+   jrnl today: ${1}. $REPLY - ${2}
+}
+log_question 'What did I achieve today?' '@achieve'
+log_question 'What did I learn today?' '@learn'
