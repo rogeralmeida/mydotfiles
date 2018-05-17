@@ -181,3 +181,9 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,_site/*
 
 " Theasurus query plugin. Remapping shortcut to solve conflict
 nnoremap <Leader>hs :ThesaurusQueryReplaceCurrentWord<CR>
+
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
