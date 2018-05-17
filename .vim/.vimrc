@@ -39,7 +39,8 @@ Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/syntastic'
 " Plugins for writing
 Plugin 'reedes/vim-pencil'
-Plugin 'ron89/thesaurus_query.vim'
+" Plugin 'ron89/thesaurus_query.vim' requires python and much effort to work
+" with neovim
 Plugin 'rhysd/vim-grammarous'
 Plugin 'dpelle/vim-LanguageTool'
 Plugin 'junegunn/goyo.vim'
