@@ -16,6 +16,7 @@ docker-machine
 exercism
 fasd
 ffind
+ffmpeg
 findutils
 fontconfig
 freetype
@@ -33,10 +34,12 @@ homebrew/dupes/grep
 homebrew/dupes/openssh
 httpie
 icu4c
+imagemagick
 jemalloc
 jpeg
 jq
 jrnl
+lame
 lastpass-cli
 libevent
 libidn2
@@ -86,5 +89,8 @@ unibilium
 vim
 webp
 wget
+x264
+xvid
 xz
 yarn
+youtube-dl
