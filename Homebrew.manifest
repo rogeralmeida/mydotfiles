@@ -3,6 +3,7 @@ ansible
 autoconf
 bash
 bash-completion@2
+bat
 boost
 caskroom/cask/brew-cask
 chromedriver
