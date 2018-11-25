@@ -36,7 +36,8 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'jakedouglas/exuberant-ctags'
 Plugin 'tpope/vim-endwise'
-Plugin 'scrooloose/syntastic'
+" Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 " Plugins for writing
 Plugin 'reedes/vim-pencil'
 " Plugin 'ron89/thesaurus_query.vim' requires python and much effort to work
@@ -44,8 +45,12 @@ Plugin 'reedes/vim-pencil'
 Plugin 'rhysd/vim-grammarous'
 Plugin 'dpelle/vim-LanguageTool'
 Plugin 'junegunn/goyo.vim'
+Plugin 'sheerun/vim-polyglot'
 " tagbar to show file structure
 Plugin 'majutsushi/tagbar'
+
+Plugin 'vimwiki/vimwiki'
+Plugin 'hotoo/calendar-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -187,3 +192,17 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
+
+" eslint configurations. source: https://medium.com/@hpux/vim-and-eslint-16fa08cc580f
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
+
+let g:polyglot_disabled = ['graphql']
+let g:vimwiki_list = [{'path': '~/code/roger/rogeralmeida.github.io/wikki/', 'syntax': 'markdown', 'ext': '.md', 'index': 'main'}, {'path': '~/tyro_wikki/', 'syntax': 'markdown', 'ext': '.md'}]
