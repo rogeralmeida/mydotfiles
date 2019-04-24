@@ -30,6 +30,8 @@ go
 gradle
 graphviz
 grep
+heroku
+heroku-node
 highlight
 howdoi
 htop
@@ -48,6 +50,7 @@ libgpg-error
 libidn2
 libogg
 libpng
+libpq
 libtermkey
 libtiff
 libtool
@@ -58,6 +61,7 @@ libvpx
 libvterm
 libyaml
 libzip
+little-cms2
 lua
 luajit
 mackup
@@ -71,12 +75,15 @@ mysql
 neovim
 node
 oniguruma
+openjpeg
 openssh
 openssl
 openssl@1.1
 opus
 pcre
+pcre2
 perl
+pgcli
 pinentry
 pipenv
 pkg-config
@@ -96,6 +103,7 @@ telnet
 theora
 tldr
 tmux
+travis
 tree
 unibilium
 vim
@@ -107,3 +115,4 @@ xvid
 xz
 yarn
 youtube-dl
+zlib

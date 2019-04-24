@@ -1,10 +1,11 @@
-adium
 alfred
 android-file-transfer
 atom
 caffeine
 chefdk
+comic-life
 dash
+discord
 docker
 dropbox
 evernote
@@ -24,8 +25,9 @@ macdown
 macvim
 menucalendarclock-ical
 michaelvillar-timer
+mps
+pgadmin4
 postman
-projectlibre
 qlcolorcode
 qlmarkdown
 qlprettypatch
@@ -34,13 +36,11 @@ quicklook-csv
 quicklook-json
 quicksilver
 real-vnc
-rightzoom
 skitch
 skype
 slack
 spectacle
 spotify
-steam
 sublime
 sublime-text
 suspicious-package
@@ -51,4 +51,3 @@ visual-studio-code
 vlc
 webpquicklook
 xmind
-xquartz
