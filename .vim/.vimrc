@@ -182,14 +182,15 @@ inoremap <C-t>     <Esc>:tabnew<CR>
 iabbrev fnc function(){}
 
 " making ctrlp ignore some folders and files
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,_site/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,_site/*,venv/*
 
 " Theasurus query plugin. Remapping shortcut to solve conflict
 nnoremap <Leader>hs :ThesaurusQueryReplaceCurrentWord<CR>
+nnoremap <Leader>wa :VimwikiAll2HTML<CR>
 
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|venv\|tmp$',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
 
@@ -205,4 +206,4 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 
 let g:polyglot_disabled = ['graphql']
-let g:vimwiki_list = [{'path': '~/code/roger/rogeralmeida.github.io/wikki/', 'syntax': 'markdown', 'ext': '.md', 'index': 'main'}, {'path': '~/tyro_wikki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '~/code/roger/rogeralmeida.github.io/wikki/', 'syntax': 'markdown', 'ext': '.md', 'index': 'main'}, {'path': '~/tyro_wikki/', 'ext': '.md', 'path_html': '~/tyro_wikki/html/'}]
