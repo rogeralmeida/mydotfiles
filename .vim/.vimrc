@@ -13,17 +13,13 @@ call vundle#begin('~/.vim/bundle')
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'mattn/emmet-vim'
 Plugin 'rodjek/vim-puppet'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'chrisbra/Colorizer'
-Plugin 'josuegaleas/jay'
 Plugin 'tpope/vim-surround'
 Plugin 'lbnf.vim'
-Plugin 'killphi/vim-ebnf'
-" Plugin 'ervandew/supertab'
-Plugin 'valloric/youcompleteme'
+Plugin 'ervandew/supertab'
 Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'ecomba/vim-ruby-refactoring'
@@ -34,21 +30,30 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'jgdavey/tslime.vim'
-Plugin 'jakedouglas/exuberant-ctags'
 Plugin 'tpope/vim-endwise'
-" Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'w0rp/ale'
+
+" Themes ===================
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'chrisbra/Colorizer'
+Plugin 'jdkanani/vim-material-theme'
+Plugin 'josuegaleas/jay'
+
 " Plugins for writing
-Plugin 'reedes/vim-pencil'
+" Plugin 'reedes/vim-pencil'
 " Plugin 'ron89/thesaurus_query.vim' requires python and much effort to work
 " with neovim
-Plugin 'rhysd/vim-grammarous'
-Plugin 'dpelle/vim-LanguageTool'
-Plugin 'junegunn/goyo.vim'
-Plugin 'sheerun/vim-polyglot'
+" Plugin 'rhysd/vim-grammarous'
+" Plugin 'dpelle/vim-LanguageTool' problems to install
+" Plugin 'junegunn/goyo.vim'
+" Plugin 'sheerun/vim-polyglot'
+
 " tagbar to show file structure
 Plugin 'majutsushi/tagbar'
 
+" Plugins work personal wiki
 Plugin 'vimwiki/vimwiki'
 Plugin 'hotoo/calendar-vim'
 
@@ -72,8 +77,10 @@ set number
 set background=dark
 set ts=2 sts=2 sw=2 noexpandtab
 set autoindent
-"colorscheme solarized
+" colorscheme solarized
 colorscheme jay
+" colorscheme material-theme
+" colorscheme jellybeans
 
 " nvim is complaining about this option
 " set term=screen-256color
@@ -206,4 +213,4 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 
 let g:polyglot_disabled = ['graphql']
-let g:vimwiki_list = [{'path': '~/code/roger/rogeralmeida.github.io/wikki/', 'syntax': 'markdown', 'ext': '.md', 'index': 'main'}, {'path': '~/tyro_wikki/', 'ext': '.md', 'path_html': '~/tyro_wikki/html/'}]
+let g:vimwiki_list = [{'path': '/keybase/private/rogeralmeida/wiki/', 'syntax': 'default', 'ext': '.md', 'index': 'main'}, {'path': '~/code/roger/rogeralmeida.github.io/wikki/', 'syntax': 'default', 'ext': '.md', 'index': 'main'}, {'path': '~/tyro_wikki/', 'ext': '.md', 'path_html': '~/tyro_wikki/html/'}]

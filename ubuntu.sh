@@ -1,23 +1,22 @@
 #!/bin/bash
 
-RUBY_VERSION=2.3.1
+RUBY_VERSION=2.6.3
 
 log(){
 	echo ">>>>>> $1"
 }
 
-if [[ $1 != '--skip-update' ]]; then
-	log "Updating apt-get"
-	sudo add-apt-repository -y ppa:aacebedo/fasd
-	sudo apt-get update
-fi
-
 log "Installing ubuntu dependencies"
-sudo apt-get install -y git build-essential libssl-dev libreadline-dev zlib1g-dev fasd unzip python2.7 postgresql-9.5 libpq-dev python-software-properties
+. apt-get-install.sh 
 
-log "Installing Node"
-curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-sudo apt-git install nodejs
+log "Installing howdoi..."
+howdoi pip install
+sudo pip install --upgrade youtube_dl
+
+log "Installing Node libraries"
+npx add-gitignore
+npm install -g tldr
+npm install -g @rafaelrinaldi/whereami
 
 log "installing rbenv"
 [ "$(ls -A ~/.rbenv)" ] && echo "rbenv already installed" || git clone https://github.com/rbenv/rbenv.git ~/.rbenv 
@@ -31,7 +30,7 @@ log "Installing rbenv-build"
 . ~/.bashrc
 
 log "installing Ruby"
-~/.rbenv/bin/rbenv versions | [ "$(grep -c $RUBY_VERSION -)" -ge 1 ] && echo "Ruby $RUBY_VERSION already installed" || ~/.rbenv/bin/rbenv install 2.3.1
+~/.rbenv/bin/rbenv versions | [ "$(grep -c $RUBY_VERSION -)" -ge 1 ] && echo "Ruby $RUBY_VERSION already installed" || ~/.rbenv/bin/rbenv install $RUBY_VERSION
 
 log "Installing bash-git-prompt"
 [ "$(ls -A ~/.bash-git-prompt)" ] && echo "bash-git-prompt already installed" || git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1

@@ -67,4 +67,14 @@ alias rb="rbenv exec bundle exec"
 
 alias cat=bat
 
-alias ta="tmux a -t"
+#tmux
+alias txa="tmux a -t"
+alias txn="tmux new"
+
+#todo.txt
+alias t="todo-txt -d ${HOME}/.todo-txt/.todo.cfg"
+alias ta="todo-txt -d ${HOME}/.todo-txt/.todo.cfg a"
+alias td="todo-txt -d ${HOME}/.todo-txt/.todo.cfg do"
+
+#Wiki
+alias wiki="vim +VimwikiIndex"

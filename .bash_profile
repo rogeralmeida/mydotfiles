@@ -15,6 +15,7 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 
 
 export PATH=$HOME/mydotfiles/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 source $HOME/mydotfiles/.bash_alias
 source $HOME/mydotfiles/java.sh
@@ -27,8 +28,6 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 [[ -f $HOME/mydotfiles/.bash_preexec.sh ]] && source $HOME/mydotfiles/.bash_preexec.sh
-
-
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
