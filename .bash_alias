@@ -27,6 +27,7 @@ alias gc="git commit -v"
 alias gcm="git commit -m"
 alias gpr="git pull --rebase"
 alias gpo="git push origin"
+alias gph="git push heroku master"
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias glsu="git ls-files -o --exclude-standard"
@@ -49,6 +50,7 @@ alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
 
 #vim + fasd
 alias v="sf -e nvim"
+alias vim='nvim'
 
 #Bundle
 alias be="bundle exec"
@@ -69,7 +71,7 @@ alias cat=bat
 
 #tmux
 alias txa="tmux a -t"
-alias txn="tmux new"
+alias txn="tmux new -s"
 
 #todo.txt
 alias t="todo-txt -d ${HOME}/.todo-txt/.todo.cfg"
@@ -78,3 +80,7 @@ alias td="todo-txt -d ${HOME}/.todo-txt/.todo.cfg do"
 
 #Wiki
 alias wiki="vim +VimwikiIndex"
+alias diary="nvim -c :VimwikiMakeDiaryNote -c \"cd %:p:h\""
+
+#java
+alias mci="time mvn clean install"

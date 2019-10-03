@@ -34,6 +34,8 @@ Plugin 'tpope/vim-endwise'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'w0rp/ale'
 
+Plugin 'digitaltoad/vim-pug'
+
 " Themes ===================
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'altercation/vim-colors-solarized'
@@ -213,4 +215,4 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 
 let g:polyglot_disabled = ['graphql']
-let g:vimwiki_list = [{'path': '/keybase/private/rogeralmeida/wiki/', 'syntax': 'default', 'ext': '.md', 'index': 'main'}, {'path': '~/code/roger/rogeralmeida.github.io/wikki/', 'syntax': 'default', 'ext': '.md', 'index': 'main'}, {'path': '~/tyro_wikki/', 'ext': '.md', 'path_html': '~/tyro_wikki/html/'}]
+let g:vimwiki_list = [{'path':'~/Dropbox/wiki/', 'syntax': 'markdown', 'ext': '.md', 'path_html': '~/Dropbox/wiki/html'}, {'path': '/keybase/private/rogeralmeida/wiki/', 'syntax': 'default', 'ext': '.md', 'index': 'main'}, {'path': '~/code/roger/rogeralmeida.github.io/wikki/', 'syntax': 'default', 'ext': '.md', 'index': 'main'}, {'path': '~/tyro_wikki/', 'ext': '.md', 'path_html': '~/tyro_wikki/html/'}]
