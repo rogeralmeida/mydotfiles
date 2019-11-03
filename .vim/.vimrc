@@ -10,31 +10,35 @@ call vundle#begin('~/.vim/bundle')
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-Plugin 'mattn/emmet-vim'
-Plugin 'rodjek/vim-puppet'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'tpope/vim-surround'
-Plugin 'lbnf.vim'
-Plugin 'ervandew/supertab'
-Plugin 'honza/vim-snippets'
-Plugin 'scrooloose/nerdcommenter'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'digitaltoad/vim-pug'
 Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'vim-airline/vim-airline'
+Plugin 'ervandew/supertab'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'honza/vim-snippets'
+Plugin 'jgdavey/tslime.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'lbnf.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'rodjek/vim-puppet'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'jgdavey/tslime.vim'
 Plugin 'tpope/vim-endwise'
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'valloric/youcompleteme'
 Plugin 'w0rp/ale'
-
-Plugin 'digitaltoad/vim-pug'
+Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'peitalin/vim-jsx-typescript'
 
 " Themes ===================
 Plugin 'nanotech/jellybeans.vim'
@@ -216,3 +220,18 @@ let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 
 let g:polyglot_disabled = ['graphql']
 let g:vimwiki_list = [{'path':'~/Dropbox/wiki/', 'syntax': 'markdown', 'ext': '.md', 'path_html': '~/Dropbox/wiki/html'}, {'path': '/keybase/private/rogeralmeida/wiki/', 'syntax': 'default', 'ext': '.md', 'index': 'main'}, {'path': '~/code/roger/rogeralmeida.github.io/wikki/', 'syntax': 'default', 'ext': '.md', 'index': 'main'}, {'path': '~/tyro_wikki/', 'ext': '.md', 'path_html': '~/tyro_wikki/html/'}]
+
+" Using a template to create dairy notes with important questions
+au BufNewFile ~/Dropbox/wiki/diary/*.md :silent 0r !~/.vim/bin/generate-vimwiki-diary-template.py '%'
+
+" " Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" " Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
