@@ -56,3 +56,5 @@ echo "Installing tmux configuration"
 git clone https://github.com/gpakosz/.tmux.git ~/.tmux
 ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
 ln -s -f ~/.tmux/.tmux.conf.local ~/.tmux.conf.local
+
+source extensions.sh
