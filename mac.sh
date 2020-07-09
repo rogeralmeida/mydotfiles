@@ -24,7 +24,7 @@ echo " Make sure we’re using the latest Homebrew."
 brew update
 
 echo " Upgrade any already-installed formulae."
-brew upgrade --all
+brew upgrade
 
 ./macInstallBrew.sh
 ./macInstallCask.sh
