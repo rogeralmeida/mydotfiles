@@ -17,7 +17,6 @@ echo " Keep-alive: update existing `sudo` time stamp until the script has finish
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo "Brew at work"
-brew tap homebrew/versions
 brew tap phinze/homebrew-cask
 
 echo " Make sure we’re using the latest Homebrew."
@@ -46,16 +45,23 @@ echo "Installing oh-my-z shell"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Installing my favourite oh-my-zsh plugins"
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ${$ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-git clone https://github.com/supercrabtree/k $ZSH_CUSTOM/plugins/k
+[ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+[ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ] || git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+[ -d "$HOME/.oh-my-zsh/custom/plugins/k" ] || git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/custom/plugins/k
+[ -d "$HOME/.oh-my-zsh/custom/themes/powerlevel9k" ] || git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.oh-my-zsh/custom/themes/powerlevel9k
 
-ln -s ~/mydofiles/.zshrc ~/.zshrc
+rm $HOME/.zshrc
+ln -sf $HOME/mydotfiles/.zshrc $HOME/.zshrc
 
 echo "Installing tmux configuration"
-git clone https://github.com/gpakosz/.tmux.git ~/.tmux
+[ -d $HOME/.tmux ] || git clone https://github.com/gpakosz/.tmux.git $HOME/.tmux
 ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
 ln -s -f ~/.tmux/.tmux.conf.local ~/.tmux.conf.local
 
 source extensions.sh
+
+echo "Installing SDKMAN"
+curl -s "https://get.sdkman.io" | bash
+
+echo "Installing NVM"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash

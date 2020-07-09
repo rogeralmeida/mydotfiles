@@ -2,7 +2,7 @@
 
 function install_brew_package {
 	echo "Installing brew ${@}"
-	brew install "${@}"
+	brew list "${@}" || brew install "${@}"
 }
 
 echo "installing brew packages"

@@ -2,7 +2,7 @@
 
 function install_cask_package {
 	echo "Installing cask ${@}"
-	brew cask install "${@}"
+	brew cask list "${@}" || brew cask install "${@}"
 }
 
 
