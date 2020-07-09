@@ -37,22 +37,22 @@ echo "Cleaning up brew"
 brew cleanup
 brew linkapps
 
-echo "Installing solarized theme"
-if [ ! -f ~/solarized.zip ]; then
-	wget -O ~/solarized.zip http://ethanschoonover.com/solarized/files/solarized.zip
-fi
-
-if [ ! -f ~/solarized/iterm2-colors-solarized/Solarized\ Dark.itermcolors ]; then
-  unzip ~/solarized.zip -d ~/
-  open ~/solarized/iterm2-colors-solarized/Solarized\ Dark.itermcolors
-fi
-
-if [ ! -d ~/.bash-git-prompt ]; then
-	echo "Installing bash-git-prompt"
-	git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt
-fi
-
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
 	echo "Installing Vundle"
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
+
+echo "Installing oh-my-z shell"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo "Installing my favourite oh-my-zsh plugins"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+
+ln -s ~/mydofiles/.zshrc ~/.zshrc
+
+echo "Installing tmux configuration"
+git clone https://github.com/gpakosz/.tmux.git ~/.tmux
+ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
+ln -s -f ~/.tmux/.tmux.conf.local ~/.tmux.conf.local
