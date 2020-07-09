@@ -83,7 +83,7 @@ alias wiki="nvim +VimwikiIndex -c \"cd %:p:h\""
 alias diary="nvim -c :VimwikiMakeDiaryNote -c \"cd %:p:h\""
 
 #java
-alias mci="time mvn clean install"
+alias mci="time mvn -T 4 clean install"
 
 #ubuntu
 alias sau="time sudo apt-get update"
