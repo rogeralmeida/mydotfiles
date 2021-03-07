@@ -3,42 +3,42 @@ filetype off                  " required
 set noswapfile
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/mydotfiles/.vim/bundle/Vundle.vim
 " call vundle#begin('~/.vim/bundle')
-call vundle#begin('~/.vim/bundle')
+call vundle#begin('~/mydotfiles/.vim/bundle')
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'airblade/vim-gitgutter'
-Plugin 'digitaltoad/vim-pug'
-Plugin 'ecomba/vim-ruby-refactoring'
+" Plugin 'digitaltoad/vim-pug'
+" Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'ervandew/supertab'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'jgdavey/tslime.vim'
-Plugin 'kchmck/vim-coffee-script'
+" Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'lbnf.vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-Plugin 'rodjek/vim-puppet'
+" Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+" Plugin 'rodjek/vim-puppet'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'thoughtbot/vim-rspec'
+" Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-cucumber'
+" Plugin 'tpope/vim-rails'
+" Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-endwise'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'valloric/youcompleteme'
+" Plugin 'valloric/youcompleteme'
 Plugin 'w0rp/ale'
-Plugin 'pangloss/vim-javascript'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'maxmellon/vim-jsx-pretty'
-Plugin 'peitalin/vim-jsx-typescript'
+" Plugin 'pangloss/vim-javascript'
+" Plugin 'leafgarland/typescript-vim'
+" Plugin 'maxmellon/vim-jsx-pretty'
+" Plugin 'peitalin/vim-jsx-typescript'
 
 " Themes ===================
 Plugin 'nanotech/jellybeans.vim'
@@ -61,7 +61,11 @@ Plugin 'majutsushi/tagbar'
 
 " Plugins work personal wiki
 Plugin 'vimwiki/vimwiki'
-Plugin 'hotoo/calendar-vim'
+" Plugin 'hotoo/calendar-vim'
+Plugin 'itchyny/calendar.vim'
+Plugin 'tbabej/taskwiki'
+Plugin 'powerman/vim-plugin-AnsiEsc'
+Plugin 'blindFS/vim-taskwarrior'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -79,7 +83,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 "
 syntax on
-set number
+set number relativenumber
 set background=dark
 set ts=2 sts=2 sw=2 noexpandtab
 set autoindent
@@ -127,6 +131,7 @@ nnoremap <silent> <leader>s :set spell!<CR>
 
 nnoremap <leader><space> :noh<cr>
 nnoremap <silent> <leader>w :set wrap!<CR>
+nnoremap <leader>c :Calendar -view=today -position=right -split=vertical -width=100<CR>
 
 inoremap <c-u> <esc>bvwUi
 
@@ -149,7 +154,8 @@ nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 vnoremap <leader>" `<i"<esc>`>a"<esc>
 
-nnoremap <F8> :Geeknote<cr>
+" I'm not using this anymore
+" nnoremap <F8> :Geeknote<cr>
 
 
 iabbrev @@ roger.eduardo@gmail.com
@@ -169,17 +175,17 @@ set hidden
 set expandtab
 
 " RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>n :call RunNearestSpec()<CR>
+" map <Leader>t :call RunCurrentSpecFile()<CR>
+" map <Leader>n :call RunNearestSpec()<CR>
 " map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+" map <Leader>a :call RunAllSpecs()<CR>
 
 " vim-rspec using send_to_Tmux
-let g:rspec_command = 'call Send_to_Tmux("be rspec {spec}\n")'
+" let g:rspec_command = 'call Send_to_Tmux("be rspec {spec}\n")'
 
 " defining configurations by file type
 " Markdown nolist, spell, wrap
-autocmd FileType markdown :setlocal spell spelllang=en_us nolist wrap
+autocmd FileType markdown :setlocal spell spelllang=en_au nolist wrap
 
 " Ruby: nospell, list, nowrap
 autocmd FileType ruby :setlocal nospell list nowrap
@@ -219,10 +225,16 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 
 let g:polyglot_disabled = ['graphql']
-let g:vimwiki_list = [{'path':'~/Dropbox/wiki/', 'syntax': 'markdown', 'ext': '.md', 'path_html': '~/Dropbox/wiki/html'}, {'path': '/keybase/private/rogeralmeida/wiki/', 'syntax': 'default', 'ext': '.md', 'index': 'main'}, {'path': '~/code/roger/rogeralmeida.github.io/wikki/', 'syntax': 'default', 'ext': '.md', 'index': 'main'}, {'path': '~/tyro_wikki/', 'ext': '.md', 'path_html': '~/tyro_wikki/html/'}]
+
+let tasks_wiki = {'path': '~/Dropbox/wiki/', 'syntax': 'default', 'ext': '.wiki', 'path_html': '~/Dropbox/wiki/html'}
+let blog_wiki = {'path': '~/code/roger/rogeralmeida.github.io/wikki/', 'syntax': 'markdown', 'ext': '.md', 'index': 'main'}
+let writing_wiki = {'path': '~/Dropbox/wiki-writing/', 'syntax': 'default', 'ext': '.wiki', 'index': 'index'}
+let g:vimwiki_list = [tasks_wiki, writing_wiki, blog_wiki]
+
+iab <expr> tday strftime('%Y-%m-%d')
 
 " Using a template to create dairy notes with important questions
-au BufNewFile ~/Dropbox/wiki/diary/*.md :silent 0r !~/.vim/bin/generate-vimwiki-diary-template.py '%'
+au BufNewFile ~/Dropbox/wiki/diary/*.md :silent 0r !~/mydotfiles/.vim/bin/generate-vimwiki-diary-template.py '%'
 
 " " Copy to clipboard
 vnoremap  <leader>y  "+y
@@ -235,3 +247,23 @@ nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
+
+
+let g:python3_host_prog = '/usr/bin/python3'
+let g:vimwiki_folding = 'list'
+
+if has("gui_running")
+  if has("gui_gtk2")
+    :set guifont=Fira\ Code\ 16
+  elseif has("x11")
+    " Also for GTK 1
+    :set guifont=*-lucidatypewriter-medium-r-normal-*-*-180-*-*-m-*-*
+  elseif has("gui_win32")
+    :set guifont=Luxi_Mono:h12:cANSI
+  elseif has("gui_macvim")
+    :set guifont=Fira\ Code:h16
+  endif
+endif
+
+let g:calendar_google_calendar = 1
+source ~/.cache/calendar.vim/credentials.vim
