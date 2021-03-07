@@ -13,6 +13,17 @@ alias vd="vagrant destroy"
 alias vdf="vagrant destroy --force"
 alias vbr="vagrant box remove"
 
+#Docker
+alias dc="docker-compose"
+alias dcu='dc up'
+alias dcd='dc down'
+alias dcud='dcu -d'
+alias dcubrr='dcu --build --force-recreate --remove-orphans'
+alias dsa="docker stop $(docker ps -q)"
+alias dra="docker rm $(docker ps -a -q)"
+alias dps="docker ps"
+
+
 #Git
 alias g="git"
 alias gs="git status -sb"
@@ -25,6 +36,7 @@ alias ga="git add"
 alias gap="git add -p"
 alias gc="git commit -v"
 alias gcm="git commit -m"
+alias gmc="gitmoji -c"
 alias gpr="git pull --rebase"
 alias gpo="git push origin"
 alias gph="git push heroku master"
@@ -34,7 +46,8 @@ alias glsu="git ls-files -o --exclude-standard"
 alias gg="git grep"
 alias gig="__git_ignore_file"
 alias gcommiters="git shortlog -s | sort"
-alias gbugaddresses="git log --pretty=format: --name-only | grep -ve '^$' | sort | uniq -c | sort -r | less | head -30" 
+alias gbugaddresses="git log --pretty=format: --name-only | grep -ve '^$' | sort | uniq -c | sort -r | less | head -30"
+alias gstu="git stash -u"
 
 #Sublime
 alias sub="open -a\"Sublime Text\""
@@ -43,14 +56,13 @@ alias sub="open -a\"Sublime Text\""
 alias ..="cd .."
 
 #general
-alias f5="source ${HOME}/mydotfiles/.bash_profile"
+alias f5="source ${HOME}/mydotfiles/.zshrc"
 
 #vlc
 alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
 
 #vim + fasd
-alias v="sf -e nvim"
-alias vim='nvim'
+alias v="sf -e vim"
 
 #Bundle
 alias be="bundle exec"
@@ -66,7 +78,6 @@ alias tests="time (be rspec && be rake cucumber:non_js && be rake cucumber:js)"
 
 #ruby
 alias rb="rbenv exec bundle exec"
-
 alias cat=bat
 
 #tmux
@@ -79,7 +90,7 @@ alias ta="todo-txt -d ${HOME}/.todo-txt/.todo.cfg a"
 alias td="todo-txt -d ${HOME}/.todo-txt/.todo.cfg do"
 
 #Wiki
-alias wiki="nvim +VimwikiIndex -c \"cd %:p:h\""
+alias vw="nvim +VimwikiIndex -c \"cd %:p:h\""
 alias diary="nvim -c :VimwikiMakeDiaryNote -c \"cd %:p:h\""
 
 #java
@@ -89,3 +100,5 @@ alias mci="time mvn -T 4 clean install"
 alias sau="time sudo apt-get update"
 alias sai="time sudo apt install"
 alias saiy="time sudo apt install -y"
+
+alias please="sudo"
