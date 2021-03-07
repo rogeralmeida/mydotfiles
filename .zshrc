@@ -112,22 +112,19 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+source ~/antigen.zsh
 
-alias gs="gss"
-alias gap="git add -p"
-alias gg="git grep"
-alias gcm="git commit -m"
-alias gdc="git diff --cached"
-alias gpo="git push origin"
-alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias gll="gl --stat"
-alias glll="gl -p"
-alias glc="git log --name-status | grep -E '^M[[:blank:]]' | cut -d' ' -f 2  | sort | uniq -c | sort -rn | head -20"
-alias gcommiters="git shortlog -s | sort"
-alias gbugaddresses="git log --pretty=format: --name-only | grep -ve '^$' | sort | uniq -c | sort -r | less | head -30"
-alias gstu="git stash -u"
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+antigen bundle ael-code/zsh-colored-man-pages
+antigen apply
 
-alias dc="docker-compose"
+source ~/mydotfiles/.bash_alias
+
+function dshell(){
+  docker exec -it $1 /bin/bash
+}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fasd --init auto)"
