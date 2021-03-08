@@ -21,15 +21,15 @@ LIGHTCYAN='\033[1;36m'
 WHITE='\033[1;37m'
 
 function log_question(){
-   echo $1
+   echo "${GREEN}${1}${NOCOLOR}"
    read
-   jrnl today: ${1}. $REPLY - ${2}
+   jrnl today: ${1}. $REPLY - ${2} > /dev/null
 }
 
 function log_yes_no_question(){
    read -p "$(echo -e ${GREEN}${1}${NOCOLOR} [y/n])" -n 1 -r
    echo
-   jrnl today: ${1}. $REPLY
+   jrnl today: ${1}. $REPLY > /dev/null
 }
 
 function echo_blue(){
@@ -48,7 +48,7 @@ log_yes_no_question "Have you reviewed the following day for important things yo
 log_yes_no_question "Have you reviewed your daily log of tasks? (Crossing, striking, delegating, scheduling)"
 log_yes_no_question "Have you picked the 3 most important tasks for tomorrow?"
 
-echo "Nice... what about your infinite game?"
+echo_yellow "Nice... what about your infinite game?"
 echo
 
 log_question 'What did I achieve today?' '@achieve'
@@ -57,4 +57,5 @@ log_question 'What is the big question on your mind? @learn'
 
 end=`date +%s`
 duration=$((end-start))
+jrnl today: eod duration was ${duration} > /dev/null
 echo "Thank you. Todays EOD took: ${duration} seconds"
