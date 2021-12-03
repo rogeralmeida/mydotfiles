@@ -21,15 +21,15 @@ LIGHTCYAN='\033[1;36m'
 WHITE='\033[1;37m'
 
 function log_question(){
-   echo "${GREEN}${1}${NOCOLOR}"
+   echo -e "${GREEN}${1}${NOCOLOR}"
    read
-   jrnl today: ${1}. $REPLY - ${2} > /dev/null
+   jrnl ${1}. $REPLY - ${2} > /dev/null
 }
 
 function log_yes_no_question(){
    read -p "$(echo -e ${GREEN}${1}${NOCOLOR} [y/n])" -n 1 -r
    echo
-   jrnl today: ${1}. $REPLY > /dev/null
+   jrnl ${1}. $REPLY > /dev/null
 }
 
 function echo_blue(){
