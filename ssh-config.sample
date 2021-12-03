@@ -1,0 +1,15 @@
+Host gitlab-dnx
+  HostName gitlab.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_dnx_20210618
+
+Host gitlab-adatree
+  HostName gitlab.com
+  User git
+  IdentityFile ~/.ssh/id_rsa
+
+Host github
+  AddKeysToAgent yes
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa.github
