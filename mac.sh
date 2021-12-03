@@ -54,7 +54,7 @@ defaults write com.apple.dock persistent-apps -array
 
 if [ ! `which brew` ]; then
 	cecho "Installing brew" $blue
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 cecho "Changing the bash_profile" $blue
