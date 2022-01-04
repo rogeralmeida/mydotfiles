@@ -229,7 +229,8 @@ let g:polyglot_disabled = ['graphql']
 let tasks_wiki = {'path': '~/Dropbox/wiki/', 'syntax': 'default', 'ext': '.wiki', 'path_html': '~/Dropbox/wiki/html'}
 let blog_wiki = {'path': '~/code/roger/rogeralmeida.github.io/wikki/', 'syntax': 'markdown', 'ext': '.md', 'index': 'main'}
 let writing_wiki = {'path': '~/Dropbox/wiki-writing/', 'syntax': 'default', 'ext': '.wiki', 'index': 'index'}
-let g:vimwiki_list = [tasks_wiki, writing_wiki, blog_wiki]
+let notes_wiki = {'path': '~/code/roger/roger-notes/content/', 'syntax': 'default', 'ext': '.wiki', 'index': 'index', 'path_html': '~/code/roger/roger-notes/docs/', 'template_path': '~/code/roger/roger-notes/templates/', 'template_default': 'default', 'template_ext': '.html'}
+let g:vimwiki_list = [tasks_wiki, notes_wiki, writing_wiki, blog_wiki]
 
 iab <expr> tday strftime('%Y-%m-%d')
 
