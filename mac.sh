@@ -68,6 +68,9 @@ sudo -v
 cecho " Keep-alive: update existing `sudo` time stamp until the script has finished." $yellow
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+cecho "Installing HomeBrew" $blue
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 echo "Brew at work"
 brew tap homebrew/cask
 
