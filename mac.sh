@@ -121,6 +121,6 @@ curl -s "https://get.sdkman.io" | bash
 echo "Installing NVM"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
-nvm install lts
-nvm use lts
+nvm install 16.16.0
+nvm use 16.16.0
 npm install -g gitmoji-cli
