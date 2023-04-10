@@ -90,8 +90,8 @@ alias ta="todo-txt -d ${HOME}/.todo-txt/.todo.cfg a"
 alias td="todo-txt -d ${HOME}/.todo-txt/.todo.cfg do"
 
 #Wiki
-alias vw="nvim +VimwikiIndex -c \"cd %:p:h\""
-alias diary="nvim -c :VimwikiMakeDiaryNote -c \"cd %:p:h\""
+alias vw="vim +VimwikiIndex -c \"cd %:p:h\""
+alias diary="vim -c :VimwikiMakeDiaryNote -c \"cd %:p:h\""
 
 #java
 alias mci="time mvn -T 4 clean install"
@@ -102,3 +102,5 @@ alias sai="time sudo apt install"
 alias saiy="time sudo apt install -y"
 
 alias please="sudo"
+
+alias tf="terraform"

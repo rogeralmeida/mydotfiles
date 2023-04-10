@@ -17,7 +17,7 @@ reset=`tput sgr0`
 # arg $1 = message
 # arg $2 = Color
 cecho() {
-  echo "${2}${1}${reset}"
+  echo -e "${2} ${1} ${reset}"
   return
 }
 
@@ -52,13 +52,9 @@ cecho "Wipe all (default) app icons from the Dock!" $red
 cecho "(This is only really useful when setting up a new Mac, or if you don't use the Dock to launch apps.)" $cyan
 defaults write com.apple.dock persistent-apps -array
 
-if [ ! `which brew` ]; then
-	cecho "Installing brew" $blue
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-fi
-
 cecho "Changing the bash_profile" $blue
 rm ~/.bash_profile
+rm ~/.vimrc
 ln -s ~/mydofiles/.bash_profile ~/.bash_profile
 ln -s ~/mydotfiles/vim/.vimrc ~/.vimrc
 
@@ -68,11 +64,12 @@ sudo -v
 cecho " Keep-alive: update existing `sudo` time stamp until the script has finished." $yellow
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-cecho "Installing HomeBrew" $blue
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-echo "Brew at work"
-brew tap homebrew/cask
+if [ ! `which brew` ]; then
+	cecho "Installing brew" $blue
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+ 	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
+    	eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 echo " Make sure we’re using the latest Homebrew."
 brew update
@@ -80,12 +77,8 @@ brew update
 echo " Upgrade any already-installed formulae."
 brew upgrade
 
-./macInstallBrew.sh
-./macInstallCask.sh
-
-# Install GNU core utilities (those that come with OS X are outdated).
-# Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
-sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
+brew install $(<Homebrew.manifest)
+brew install $(<Cask.manifest)
 
 cecho "Cleaning up brew" $red
 brew cleanup
@@ -97,30 +90,37 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
 fi
 
 echo "Installing oh-my-z shell"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+if [ -d ~/.oh-my-zsh ]; then
+	echo "oh-my-zsh is installed"
+else
+	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	echo "Installing my favourite oh-my-zsh plugins"
+	[ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+	[ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ] || git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	[ -d "$HOME/.oh-my-zsh/custom/plugins/k" ] || git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/custom/plugins/k
+	[ -d "$HOME/.oh-my-zsh/custom/themes/powerlevel9k" ] || git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.oh-my-zsh/custom/themes/powerlevel9k
 
-echo "Installing my favourite oh-my-zsh plugins"
-[ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-[ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ] || git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-[ -d "$HOME/.oh-my-zsh/custom/plugins/k" ] || git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/custom/plugins/k
-[ -d "$HOME/.oh-my-zsh/custom/themes/powerlevel9k" ] || git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.oh-my-zsh/custom/themes/powerlevel9k
+	rm $HOME/.zshrc
+	ln -sf $HOME/mydotfiles/.zshrc $HOME/.zshrc
+fi
 
-rm $HOME/.zshrc
-ln -sf $HOME/mydotfiles/.zshrc $HOME/.zshrc
 
 echo "Installing tmux configuration"
 [ -d $HOME/.tmux ] || git clone https://github.com/gpakosz/.tmux.git $HOME/.tmux
 ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
 ln -s -f ~/.tmux/.tmux.conf.local ~/.tmux.conf.local
 
-source extensions.sh
-
 echo "Installing SDKMAN"
-curl -s "https://get.sdkman.io" | bash
+if [ ! `which sdkman` ]; then
+	curl -s "https://get.sdkman.io" | bash
+fi
 
 echo "Installing NVM"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+if [ ! `which nvm` ]; then
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+	nvm install 16.16.0
+	nvm use 16.16.0
+	npm install -g gitmoji-cli
+fi
 
-nvm install 16.16.0
-nvm use 16.16.0
-npm install -g gitmoji-cli

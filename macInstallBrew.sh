@@ -1,8 +1,10 @@
 #!/bin/bash
+set -e
+set -x
 
 function install_brew_package {
 	echo "Installing brew ${@}"
-	brew list "${@}" || brew install "${@}"
+	brew install --formula "${@}" || true
 }
 
 echo "installing brew packages"
