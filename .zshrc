@@ -143,6 +143,7 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.rbenv/shims:$PATH
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH="$PATH:/Users/rogeralmeida/bin"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

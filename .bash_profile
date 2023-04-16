@@ -6,9 +6,8 @@ export GIT_EDITOR='/usr/bin/vim'
 
 
 #eval "$(rbenv init -)"
-GIT_PROMPT_THEME=Solarized
-source ~/.bash-git-prompt/gitprompt.sh
-
+#GIT_PROMPT_THEME=Solarized
+#source ~/.bash-git-prompt/gitprompt.sh
 
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad

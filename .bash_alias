@@ -48,6 +48,7 @@ alias gig="__git_ignore_file"
 alias gcommiters="git shortlog -s | sort"
 alias gbugaddresses="git log --pretty=format: --name-only | grep -ve '^$' | sort | uniq -c | sort -r | less | head -30"
 alias gstu="git stash -u"
+alias git-v="GIT_TRACE=true GIT_TRACE_SETUP=true GIT_SSH_COMMAND='ssh -v' git"
 
 #Sublime
 alias sub="open -a\"Sublime Text\""
