@@ -43,7 +43,7 @@ alias gph="git push heroku master"
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias glsu="git ls-files -o --exclude-standard"
-alias gg="git grep"
+alias gg="git grep -n"
 alias gig="__git_ignore_file"
 alias gcommiters="git shortlog -s | sort"
 alias gbugaddresses="git log --pretty=format: --name-only | grep -ve '^$' | sort | uniq -c | sort -r | less | head -30"
@@ -86,9 +86,9 @@ alias txa="tmux a -t"
 alias txn="tmux new -s"
 
 #todo.txt
-alias t="todo-txt -d ${HOME}/.todo-txt/.todo.cfg"
-alias ta="todo-txt -d ${HOME}/.todo-txt/.todo.cfg a"
-alias td="todo-txt -d ${HOME}/.todo-txt/.todo.cfg do"
+alias t="todoist --color --indent"
+# alias ta="todo-txt -d ${HOME}/.todo-txt/.todo.cfg a"
+# alias td="todo-txt -d ${HOME}/.todo-txt/.todo.cfg do"
 
 #Wiki
 alias vw="vim +VimwikiIndex -c \"cd %:p:h\""

@@ -1,4 +1,5 @@
-#!/usr/bin/env bash --login
+#!/usr/bin/env sh
+set -e
 
 # ----------------------------------
 # Colors
@@ -40,9 +41,41 @@ function echo_yellow(){
 }
 
 start=`date +%s`
+
+# for host in '1.1.1.100' '1.1.1.101' '1.1.1.102'
+# do
+#     read -p "Enter your input for ${host} " host_input
+#     echo "${host} says ${host_input}"
+# done
+
+# results=$(todoist --color --indent l --filter "#Inbox")
+# for line in $(todoist --color --indent l --filter "#Inbox"); do
+todoist --color --indent l --filter "#Inbox" | while read -e -r line; do
+# for line in "$results"; do
+   echo "${line}${NOCOLOR}"
+   read -p "Enter your input for: " host_input
+   echo "says ${host_input}"
+   read -r -n 1 -p 'Action: (s)kip, (c)omplete, (d)elete, sub-(t)ask, (c)larify, (q)uit: ' myaction
+   echo "Second echo"
+   case $myaction in
+      s) echo "Skipping" ;;
+      c) todoist --color --indent l --complete $line ;;
+      d) todoist --color --indent l --delete $line ;;
+      t) todoist --color --indent l --subtask $line ;;
+      c) todoist --color --indent l --clarify $line ;;
+      q) exit 0 ;;
+      *) echo "Skipping" ;;
+   esac
+   #read -p "$(echo -e ${GREEN}Do you want to add this to your journal? [y/n]${NOCOLOR})" -n 1 -r
+   #jrnl inbox: $line > /dev/null
+done
+# done < $(todoist --color --indent l --filter "#Inbox")
+
+exit 0
+
 echo_yellow "Lets go through the admin tasks first"
 
-log_yes_no_question "Have you updated Xero?"
+log_yes_no_question "Have you updated your timesheet?"
 log_yes_no_question "Have you writen down next day agenda?"
 log_yes_no_question "Have you reviewed the following day for important things you must pay attention?"
 log_yes_no_question "Have you reviewed your daily log of tasks? (Crossing, striking, delegating, scheduling)"
