@@ -3,7 +3,7 @@
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-nvm use 16.16.0
+nvm use 18.17.0
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/rogeralmeida/.oh-my-zsh"
@@ -77,17 +77,21 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   aws
+  colored-man-pages
+  command-not-found
   docker
   extract
   fd
+  flutter
   git
-  jira
+  iterm2
   k
   mvn
   npm
   timer
   tmux
   web-search
+  z
   zsh-syntax-highlighting
   zsh-autosuggestions
 )
@@ -145,9 +149,14 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$PATH:/Users/rogeralmeida/bin"
 export PATH="$PATH:/Applications/WebStorm.app/Contents/MacOS"
+export PATH="$PATH:/Applications/IntelliJ IDEA CE.app/Contents/MacOS"
+export JAVA_HOME=~/.sdkman/candidates/java/21.0.1-tem
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 eval "$(starship init zsh)"
 
 [[ -f ~/.secret-stuff.sh ]] && source ~/.secret-stuff.sh
+if command -v ngrok &>/dev/null; then
+  eval "$(ngrok completion)"
+fi

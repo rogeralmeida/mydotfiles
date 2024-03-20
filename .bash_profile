@@ -36,7 +36,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 eval "$(fasd --init auto)"
 
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/Applications/WebStorm.app/Contents/MacOS:/usr/local/sbin:$PATH"
 
 export NOTE_PATH="/Users/ralmeida/code/notes"
 if [ -f ~/.config/exercism/exercism_completion.bash ]; then
